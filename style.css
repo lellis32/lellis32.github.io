@@ -1,5 +1,5 @@
 body {
-    background-color: #c6bead;
+    background-color: #415068;
     padding: 0px;
 }
 
@@ -27,4 +27,7 @@ h1 {
     margin-top: 0px;
     margin-bottom: 30px;
     background-color: white;
+}
+#letter {
+    margin:30px;
 }
