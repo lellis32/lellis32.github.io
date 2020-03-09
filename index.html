@@ -1,24 +1,119 @@
 <!DOCTYPE html>
-<html>
+    <html>
     <head>
-        <title>Luke Ellis</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <title>Networking Exam 1 High Level Notes</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
         <style>
-            @import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
         </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
     </head>
-    <body>
-        <div id="container">
-            <div id="head">
-                <h1>Hello World!</h1>
-            </div>
-	    <div id="letter">
-		 <p>Dear potential employers,</p>
-		 <p>If I have included this website on my resume, I apologize, since I haven't had time to actually make it yet. It should be done this semester however.</p>
-		 <p>Thanks,</p>
-		 <p>Luke Ellis</p>
-	    </div>
-        </div>
-    </body>
-</html>
+    <body class="vscode-light">
+        <h1 id="networking-exam-1-high-level-notes">Networking Exam 1 High Level Notes</h1>
+<h2 id="chapter-1---computer-networks-and-the-internet">Chapter 1 - Computer Networks and the Internet</h2>
+<h3 id="11">1.1</h3>
+<ul>
+<li><strong>host</strong> = Internet end system = device connected to internet</li>
+<li>hosts connected by <strong>communication links</strong> (actual media of transfer) and <strong>packet switches</strong></li>
+<li><strong>packet</strong> = package of info consisting of segmented data w/ header bytes to be sent over network</li>
+<li>two types of packet switches, <strong>router</strong> (in network core) and <strong>link-layer switch</strong> (in access network)</li>
+<li><strong>route/path</strong> = sequence of communication links and packet switches traversed by a packet</li>
+<li>end systems access Internet through big networks called <strong>ISPs</strong></li>
+<li><strong>protocols</strong> control sending/receiving of info on internet (define format, order of messages, actions taken on send/receipt)</li>
+<li><strong>Transmission Control Protocol (TCP)</strong> and <strong>Internet Protocol (IP)</strong> (which specifies format of packets sent on internet) are two of the most important, and collectively called <strong>TCP/IP</strong></li>
+<li><strong>Internet standards</strong> are developed by the IETF and standards documents are called <strong>request for comments (RFCs)</strong></li>
+</ul>
+<h3 id="12">1.2</h3>
+<ul>
+<li>hosts split into <strong>clients</strong> and <strong>servers</strong></li>
+<li>two most prevalent types of broadband residential access are <strong>digital subscriber line (DSL)</strong> which uses telephone lines and cable which uses optic fiber and coaxial cable</li>
+<li><strong>fiber to the home (FTTH)</strong> new tech that uses optical fibers all the way to residence and allows much faster speeds</li>
+<li>Physical media for transmission: twisted-pair copper wires, coaxial cable, fiber optics, terrestrial and sattelite radio channels</li>
+</ul>
+<h3 id="13">1.3</h3>
+<ul>
+<li>most packet switches use <strong>store-and-forward</strong> transmission at inputs to links (must receive entire packet before sending)</li>
+<li>packet switch has <strong>output buffer/queue</strong> for each link that stores packets the router is about to send</li>
+<li>packets suffer store-and-forward delays as well as output buffer delays, which can lead to <strong>packet loss</strong> if buffer fills</li>
+<li>each router has a <strong>forwarding table</strong> that maps packet destination addresses to the router's outbound links</li>
+<li>the Internet has special <strong>routing protocols</strong> used to automatically set forwarding tables</li>
+<li>another approach to moving data in network called <strong>circuit switching</strong> reserves the resources for communication between end systems for the duration of transmission</li>
+<li>in circuit switching, when hosts want to communicate, the network establishes a dedicated <strong>end-to-end connection</strong> between them</li>
+<li>a circuit in a link is implemented with either <strong>frequency-division multiplexing (FDM)</strong> which dedicates frequency band to each connection or <strong>time-division multiplexing (TDM)</strong> which dedicates time-slots</li>
+<li>while p-switching has variable e2e delays, it offers better sharing of transmission capacity (no silent periods like in c-switching) and is simpler, more efficient, and less costly to implement than c-switching</li>
+<li>there's a hierarchy of ISPs that have a <strong>customer</strong> and <strong>provider</strong> relationship, where <strong>access ISPs</strong> connect to larger <strong>regional ISPs</strong> which then connect to massive <strong>tier-1 ISPs'</strong></li>
+<li>additionally in the structure, there are <strong>points of presence (PoPs)</strong> which are groups of routers at connection b/w ISPs, <strong>multi-homing</strong> which is connecting to multiple provider ISPs, <strong>peering</strong> where lower level ISPs connect directly without settlement, and <strong>Internet Exchange Points (IXPs)</strong> which are 3rd party meeting points for peering, and lastly <strong>content provider networks</strong> like Google</li>
+</ul>
+<h3 id="14">1.4</h3>
+<ul>
+<li>packet switch delays at each node are <strong>nodal processing delay</strong> (examining header and where to direct packet), <strong>queuing delay</strong> (time in output buffer), <strong>transmission delay</strong> (time to push onto link = length of packet in bits / transmission rate), and <strong>propogation delay</strong> (actual time on link) which together sum to <strong>total nodal delay</strong></li>
+<li>let <em>a</em> denote avg rate packets arrive at queue, then <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">La/R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">a</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span> = <strong>traffic intensity</strong> and should be less than one</li>
+<li>e2e delay = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><msub><mi>d</mi><mrow><mi>p</mi><mi>r</mi><mi>o</mi><mi>c</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>t</mi><mi>r</mi><mi>a</mi><mi>n</mi><mi>s</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>p</mi><mi>r</mi><mi>o</mi><mi>p</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N(d_{proc} + d_{trans} + d_{prop})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, where there are <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> routers between source and dest hosts</li>
+<li>route tracing and delay measurement can be done with Traceroute tool</li>
+<li><strong>instantatneous throughput</strong> is the rate (in bits/s) of data receipt at dest. host at any instant of time and <strong>average throughput</strong> is the total number of bits / total number of seconds</li>
+<li>throughput depends on transmission rates of links being used, and can be approximated by minimum transmission rate along path</li>
+</ul>
+<h3 id="15">1.5</h3>
+<ul>
+<li>network protocols are organized into <strong>layers</strong> where each layer offers <strong>services</strong> to the layer above (<strong>service model</strong>)</li>
+<li>together layers make up <strong>protocol stacks</strong>, the Internet's consisting of physical (physically move individual bits), link (moves datagram to next node in route (in packets called <strong>frames</strong>)), network (move datagrams from one host to another), transport (transports messages between application endpoints via segments w/ protocols like TCP or UDP), and application (for app to app layer messages like HTTP, FTP, SMTP) layers</li>
+<li>encapsulation - each layer uses its own type of packet consisting of a header field and a payload field which typically contains a higher level packet</li>
+</ul>
+<h3 id="16">1.6</h3>
+<ul>
+<li>bad things: malware (virus/worm), DoS/DDoS, packet sniffers (like Wireshark), IP Spoofing</li>
+</ul>
+<h2 id="chapter-2---application-layer">Chapter 2 - Application Layer</h2>
+<h3 id="21">2.1</h3>
+<ul>
+<li><strong>application architecture</strong> dictates how application is structured over various end systems, and typically fall under the paradigms of <strong>client-server</strong> or <strong>P2P</strong> architecture</li>
+<li>p2p can be self-scaling and low-cost, but face issues such as being ISP friendly, being secure, and incentivizing users to volunteer resources</li>
+<li><strong>processes</strong> (programs running on hosts) communicate w/ processes on other hosts via messages on network in pairs where one is labeled client and other labeled server processes.</li>
+<li>processes send and receive messages on the network through a software interface called a <strong>socket</strong> (like a door) a.k.a. the API b/w app and network</li>
+<li>services transport layer protocols could provide: reliable data transfer, throughput, timing, security</li>
+<li>TCP services - connection oriented service (client &amp; server exchange info before messages flow to create a full duplex <strong>TCP connection</strong>), reliable data transfer service, congestion control</li>
+<li>UDP services - lightweight, connectionless, unreliable data transfer service</li>
+<li><strong>application-layer protocol</strong> defines: types of messages exchanged, syntax of message types, semantics of fields, rules for when and how a process sends and responds to messages</li>
+</ul>
+<h3 id="22">2.2</h3>
+<ul>
+<li><strong>HyperText Transfer Protocol (HTTP)</strong> is the Web's application-layer protocol, and is implemented in a client program and server program that exchange HTTP messages</li>
+<li>HTTP uses TCP as its underlying transport-layer protocol, and HTTP is called a stateless protocol since HTTP servers maintain no client information</li>
+<li>HTTP can be configured to use either persistent (default with pipelining of requests/responses that come in at same time) or non-persistent connections (same or individual TCP connections per HTTP request)</li>
+<li><strong>round trip time (RTT)</strong> = the time it takes for a small packet to travel from client to server and back to client again</li>
+<li>HTTP request message consists of <strong>request line</strong> (method, URL, HTTP version) and subsequent <strong>header lines</strong> (extra info)</li>
+<li>HTTP response message consists of initial <strong>status line</strong> (status code and phrase), six <strong>header lines</strong> (extra info), and then the <strong>entity body</strong> (requested object)</li>
+<li>since stateless, HTTP uses cookies which includes: cookie header line in response message, cookie header line in request message, cookie file on user's system, and back-end db at website</li>
+<li>a <strong>web cache</strong> (aka <strong>proxy server</strong>) is a network entity that satisfies HTTP requests on the behalf of an origin web server, and has its own disk storage which it keeps recently requested objects in</li>
+<li>web caches can bypass bottlenecks, reduce costs for local ISPs, and localize traffic (often installed by ISPs and heavily used by CDNs)</li>
+<li>the <strong>conditional GET</strong> message is an HTTP request that uses the GET method and includes the If-Modified-Since: header line that is used to verify that an object in the cache is up to date</li>
+</ul>
+<h3 id="23">2.3</h3>
+<ul>
+<li>FTP uses two parallel TCP connections to transfer a file, a <strong>control connection</strong> (for credentials, commands to change directory or get files, etc.) and a <strong>data connection</strong> (for the file data itself)</li>
+<li>since its control connection is separate, it is said that FTP sends its control info <strong>out-of-band</strong>, whereas HTTP sent its control info <strong>in-band</strong></li>
+<li>FTP must continuously keep state in order to associate user's account with control connection, unlike HTTP</li>
+<li>common FTP commands include: USER, PASS, LIST, RETR, STOR</li>
+</ul>
+<h3 id="27">2.7</h3>
+<ul>
+<li>fun TCP and UDP client/server examples in python</li>
+</ul>
+<h2 id="chapter-3---transport-layer-well-come-back-to-this">Chapter 3 - Transport Layer (we'll come back to this)</h2>
+<h2 id="chapter-4---the-network-layer-also-come-back-to-this-sooner">Chapter 4 - The Network Layer (also come back to this sooner)</h2>
+<h2 id="chapter-5---the-link-layer-links-access-networks-and-lans">Chapter 5 - The Link Layer: Links, Access Networks, and LANs</h2>
 
+    </body>
+    </html>
