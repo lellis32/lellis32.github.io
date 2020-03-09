@@ -59,7 +59,7 @@
 <h3 id="14">1.4</h3>
 <ul>
 <li>packet switch delays at each node are <strong>nodal processing delay</strong> (examining header and where to direct packet), <strong>queuing delay</strong> (time in output buffer), <strong>transmission delay</strong> (time to push onto link = length of packet in bits / transmission rate), and <strong>propogation delay</strong> (actual time on link) which together sum to <strong>total nodal delay</strong></li>
-<li>let <em>a</em> denote avg rate packets arrive at queue, then <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">La/R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">a</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span> = <strong>traffic intensity</strong> and should be less than one</li>
+<li>let <em>a</em> denote avg rate packets arrive at queue, then <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mi>a</mi><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">La/R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">L</span><span class="mord mathdefault">a</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span></span></span></span> = <strong>traffic intensity</strong> and should be less than or equal to one</li>
 <li>e2e delay = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><msub><mi>d</mi><mrow><mi>p</mi><mi>r</mi><mi>o</mi><mi>c</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>t</mi><mi>r</mi><mi>a</mi><mi>n</mi><mi>s</mi></mrow></msub><mo>+</mo><msub><mi>d</mi><mrow><mi>p</mi><mi>r</mi><mi>o</mi><mi>p</mi></mrow></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N(d_{proc} + d_{trans} + d_{prop})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">t</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">n</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">o</span><span class="mord mathdefault mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, where there are <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> routers between source and dest hosts</li>
 <li>route tracing and delay measurement can be done with Traceroute tool</li>
 <li><strong>instantatneous throughput</strong> is the rate (in bits/s) of data receipt at dest. host at any instant of time and <strong>average throughput</strong> is the total number of bits / total number of seconds</li>
@@ -130,6 +130,89 @@
 </ul>
 </li>
 <li>every network router has a <strong>forwarding table</strong> that uses one or more fields in packet's header to map to output link interface</li>
+<li>traditional approach: forwarding table set by routing algo, <strong>software-defined networking (SDN)</strong> approach: separate remote controller implemented in software that compute forwarding tables and interacts w/ routers</li>
+<li>possible services network layer could provide: guaranteed delivery, bounded delay, in-order packet delivery, guaranteed minimal bandwidth, security (Internet's network layer only provides best-effort service)</li>
+<li>terminology: &quot;forward&quot; = &quot;switch&quot;, but &quot;routers&quot; base forwarding on header info in network layer while &quot;link-layer switches&quot; base forwarding decision on values in link-layer frame</li>
+</ul>
+<h3 id="42">4.2</h3>
+<ul>
+<li><strong>input port</strong> - physical layer function of terminating incoming physical link, link-layer functions needed to talk to link layer at other side of link, and this is where network-layer lookup function is performed to consult forwarding table</li>
+<li><strong>switching fabric</strong> - connects router's input ports to output ports</li>
+<li><strong>output ports</strong> - stores packets received from switching fabric and transmits on outgoing link via necessary link-layer and physical-layer functions</li>
+<li><strong>routing processor</strong> - performs control-plane functions:
+<ul>
+<li>traditional: executes routing protocols, maintains routing tables &amp; link state info, and computes forwarding table</li>
+<li>SDN: communicates w/ remote controller to get and install forwarding table</li>
+</ul>
+</li>
+<li><strong>destination-based forwarding</strong> - input port sends to output port w/ only destination info</li>
+<li><strong>generalized forwarding</strong> - other variables are considered when determining which (if any) output port to send to</li>
+<li><strong>longest prefix matching rule</strong> - router matches packet's dest. address w/ longest prefix in forwarding table and forwards to link associated w/ match</li>
+<li><strong>switching via memory</strong> - packets are copied to and from shared memory</li>
+<li><strong>switching via a bus</strong> - input port sends packet directly to output port over a shared bus, typically by prepending a switch-internal label</li>
+<li><strong>switching via an interconnection network</strong> - more complicated internal networks like crossbar switches (which are non-blocking) or multi-stage switching fabrics</li>
+<li>input queuing can result in <strong>head-of-the-line (HOL) blocking</strong> where queued packet must wait for transfer through fabric even w/ open output port since blocked by packet at head of the line</li>
+<li>... to be continued (moving to 4.3 now)</li>
+</ul>
+<h3 id="43">4.3</h3>
+<ul>
+<li>IPv4 datagram format:
+<ul>
+<li>version number - IP protocol version</li>
+<li>header length - determines where payload starts</li>
+<li>type of service - distinguishes different types of datagrams</li>
+<li>datagram length - total length of IP datagram in bytes</li>
+<li>identifier, flags, fragmentation offset - fields for IP fragmentation</li>
+<li>time-to-live - ensures datagrams don't circulate forever</li>
+<li>protocol - transport-layer protocol to which data portion should be passed</li>
+<li>header checksum - aids in detecting bit errors</li>
+<li>source/dest IP addresses</li>
+<li>options - used rarely to extend IP header</li>
+<li>data (payload) - transport-layer segment to be delivered to dest.</li>
+</ul>
+</li>
+<li>the <strong>maximum transmission unit (MTU)</strong> is the max amount of data a link-layer frame can carry, and is a hard limit to size of an IP datagram</li>
+<li>a solution for datagrams bigger than MTUs is to break into smaller datagrams called <strong>fragments</strong> which need to be reassembled before they reach the destination's transport layer (delegated to end systems)</li>
+<li>in IPv4, dest. host can examine identification fields of datagrams from same host to verify that they're fragments of same datagram, and use flag field to determine end of fragmented datagram, and offsets to put them in the right order</li>
+<li>an IP address is technically associated w/ an <strong>interface</strong> (boundary b/w host/router and its links) rather than w/ host or router containing that interface</li>
+<li>each IP address is 32 bits long, in <strong>dotted-decimal notation</strong> where each byte is written in decimal form and separated from other bytes by a period</li>
+<li>a network interconnecting multiple host interfaces and one router interface forms a <strong>subnet</strong></li>
+<li>subnets can be addressed by <strong>subnet mask</strong> like the /24 in 223.1.1.0/24 which indicates the leftmost 24 bits of the 32-bit quantity define the subnet address</li>
+<li>Internet's address assignment strategy called <strong>Classless Interdomain Routing (CIDR)</strong> generalizes notion of subnet addressing where any router outside a specific organization's network only needs to consider a <strong>prefix</strong>, a certain number of leftmost significant bits of the full destination address, when sending to any address inside organization</li>
+<li>before CIDR, network portions of IP address were constricted to be 1, 2, or 3 bytes in length (called <strong>classful addressing</strong>), which problematically restricted organization's networks to be of set sizes</li>
+<li>ability to use single prefix to advertise multiple networks is called <strong>address aggregation</strong>, and works extremely well when addresses are allocated in blocks to ISPs</li>
+<li>longes prefix matching is used when multiple matches apply, to allow for advertising of more specific and disjoint blocks of addresses</li>
+<li>IP address blocks can be obtained from ISP, which get them ultimately from Internet Corporation for Assigned Names and Numbers (ICANN)</li>
+<li>once organization has block of IP addresses, addresses are assigned to individual routers (by sysadmins) and hosts (by the <strong>Dynamic Host Configuration Protocol (DHCP)</strong>)</li>
+<li>DHCP allows a host to obtain an IP address automatically, either a permanent or temporary one, and gives host additional info like its subnet mask, default gateway, and local DNS server address</li>
+<li>hosts send <strong>DHCP discover message</strong> within a UDP packet to link-layer which passes to all nodes attached to the subnet (src: 0.0.0.0, dst: 255.255.255.255)</li>
+<li>DHCP server receiving discover message responds w/ a <strong>DHCP offer message</strong> that is broadcast to all nodes on subnet, and contains transaction ID from discover message, proposed IP address for client, the network mask, and an IP address lease time</li>
+<li>client chooses among one or more server offers and responds w/ a <strong>DHCP request message</strong> echoing back config params</li>
+<li>server responds to request w/ a <strong>DHCP ACK message</strong> confirming, and now client can use allocated IP address</li>
+<li><strong>network address translation (NAT)</strong> enabled routers allow for home networks to use reserved address space that only has meaning within local network, and then packets forwarded beyond the network use the NAT router's single IP address</li>
+<li>NAT routers maintain a <strong>NAT translation table</strong> that maps port numbers to different local addresses</li>
+<li>arguments against NAT include: port numbers used for hosts and not processes, interfering w/ servers on home networks (solved w/ <strong>NAT traversal</strong> tools and UPnP protocol), and also violates networking architecture</li>
+<li>IPv6 designed for when IPv4 address space used up and also added other tweaks
+<ul>
+<li>expanded addressing capabilities: increases size to 128 bits ensuring world won't run out of addresses and introduced <strong>anycast address</strong> allowing datagram to be delivered to any of a group of hosts</li>
+<li>streamlined 40-byte header: number of IPv4 fields were dropped or made optional for faster processing</li>
+<li>flow labeling: allows &quot;labeling of packets belonging to particular flows for which sender requests special handling&quot;</li>
+<li>fragmentation/reassembly removed, header checksum removed, and options field moved to a next header value</li>
+</ul>
+</li>
+<li>IPv6 datagram format:
+<ul>
+<li>version: 6</li>
+<li>traffic class: can give priority to certain datagrams over others</li>
+<li>flow label: discussed above</li>
+<li>payload length: number of bytes in payload</li>
+<li>next header: protocol to be used in transport layer</li>
+<li>hop limit: contents decremented by each router that forwards the datagram</li>
+<li>source and destination addresses: in an IPv6 format</li>
+<li>data: payload</li>
+</ul>
+</li>
+<li>adopted approach to IPv4-to-IPv6 transition is <strong>tunneling</strong>, where entire IPv6 datagrams are shoved into the payload of IPv4 datagrams in a tunnel (set of intervening IPv4 routers) and then extracted by IPv6 router when received from tunnel</li>
 </ul>
 <h2 id="chapter-5---the-network-layer-control-plane">Chapter 5 - The Network Layer: Control Plane</h2>
 <h2 id="chapter-6---the-link-layer-and-lans">Chapter 6 - The Link Layer and LANs</h2>
